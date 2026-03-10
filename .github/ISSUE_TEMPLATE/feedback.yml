@@ -1,0 +1,71 @@
+name: "Score Correction / Notation Improvement"
+description: Report a discrepancy or suggest a better notation.
+title: "[Score Issue] <Piece Title> - <Specific Section>"
+labels: ["correction", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thank you for your contribution! 🎼
+        Please fill out the form below to help us improve the quality of our scores.
+        Verified contributors will receive an **updated score** and a **discount coupon**.
+
+  - type: input
+    id: piece-title
+    attributes:
+      label: Piece Title & Version
+      placeholder: "e.g., Oscar Peterson - Soft Winds v1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      options:
+        - Audio Mismatch (Score doesn't match the audio)
+        - Notation Improvement (Suggested better readability)
+        - Typo / Graphic Error (Visual issues, spelling, etc.)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: "e.g., Measure 12-15, Piano Left Hand"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the Issue
+      description: Please describe what is wrong and how it should be fixed.
+      placeholder: "Explain the discrepancy in detail..."
+    validations:
+      required: true
+
+  - type: input
+    id: reference
+    attributes:
+      label: Reference (Optional)
+      description: Link to reference audio or specific timestamp.
+      placeholder: "e.g., YouTube link at 1:25"
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: I understand that sharing full PDF files in public issues is strictly prohibited.
+          required: true
+        - label: I would like to receive the updated score and a discount coupon once this is resolved.
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        *We will review your report as soon as possible. Thank you for your support!*
